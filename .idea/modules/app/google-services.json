@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "876329605341",
+    "firebase_url": "https://hbd-davin.firebaseio.com",
+    "project_id": "hbd-davin",
+    "storage_bucket": "hbd-davin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876329605341:android:7df1d34678df6bb247a334",
+        "android_client_info": {
+          "package_name": "com.example.hbddavin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876329605341-nk5d0nrn43p5q7ih09sfkpluotr2hqp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hbddavin",
+            "certificate_hash": "94c5bbd43fc910381d9a48accd78abde5e1e5240"
+          }
+        },
+        {
+          "client_id": "876329605341-h4oc3toltr52dn46fdfikj89junkapo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLIMGmd118Dxplw0eUvrNtO4iQBw5-Gxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876329605341-h4oc3toltr52dn46fdfikj89junkapo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

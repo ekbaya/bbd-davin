@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">HBD Davin</string>
+    <string name="next">next</string>
+    <string name="proceed">Proceed</string>
+    <string name="search">Search</string>
+    <string name="add_post">Add Post</string>
+    <string name="get_started">Get Started</string>
+    <string name="love">Love</string>
+    <string name="kind">Kindness</string>
+    <string name="beautiful">Beautiful</string>
+    <string name="grateful">Grateful</string>
+    <string name="love_text">I have never been as good as I’ve wanted to be to you. Yet your love for me makes me want to go on. I love you, darling</string>
+    <string name="kind_text">Your kindness and compassion fill me with awe. Love, thank you for being all that I could ask for in a woman and so much more</string>
+    <string name="beautiful_text">Were you really born on this day? Or did you just fly down from heaven as the beautiful angel you are?</string>
+    <string name="grateful_text">It’s your birthday, but I’m the one who should be celebrating the most. My favorite person in the world was born on this day</string>
+    <string name="happy_birthday_dear_davin">Happy Birthday Dear Davin From Family and Friends</string>
+    <string name="upload">Post</string>
+</resources>
