@@ -13,8 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppThemeNO">
-        <activity android:name=".activities.AddPostActivity"
-            android:theme="@style/AppTheme"/>
+        <activity android:name=".activities.RegistrationActivity"></activity>
+        <activity android:name=".activities.LoginActivity" />
+        <activity
+            android:name=".activities.AddPostActivity"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".activities.MainActivity"
             android:theme="@style/AppTheme" />

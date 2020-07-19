@@ -24,6 +24,8 @@ import com.example.hbddavin.apis.PostAPI;
 import com.example.hbddavin.modals.ModelPost;
 import com.example.hbddavin.services.PostListener;
 import com.example.hbddavin.services.SoundService;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseError;
 
 import java.util.List;
@@ -35,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     RecyclerView recyclerView;
     AdapterPosts adapterPosts;
     PostAPI postAPI;
+    String mUID;
+    //Declare an instance of FirebaseAuth
+    private FirebaseAuth mAuth;
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -42,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Family and Friends Posts");
-
+        //init
+        mAuth = FirebaseAuth.getInstance();
+        checkUser();
         swipeToRefresh = findViewById(R.id.swipeToRefresh);
         swipeToRefresh.setOnRefreshListener(this);
         //recycler view and its properties
@@ -51,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         // show newest posts first, for this load from last
         layoutManager.setStackFromEnd(true);
         layoutManager.setReverseLayout(true);
+        layoutManager.setReverseLayout(true);
         // set layout to recyclerView
         recyclerView.setLayoutManager(layoutManager);
 
@@ -58,6 +66,18 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         postAPI.setPostListener(this);
         loadPosts();
 
+    }
+
+    private void checkUser() {
+        // get current user
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user != null) {
+           // user is logged in stay here
+        } else {
+            // user is not signed in...
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
     }
 
     @Override
@@ -141,7 +161,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public void onDatabaseCancelled(DatabaseError error) {
-        Toast.makeText(this, "Error loading posts: "+error.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Error loading posts: "+error.toString(), Toast.LENGTH_LONG).show();
 
     }
 
@@ -161,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     protected void onResume() {
         //start service and play music
+        checkUser();
         startService(new Intent(MainActivity.this, SoundService.class));
         super.onResume();
     }
