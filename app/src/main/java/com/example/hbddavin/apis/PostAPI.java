@@ -92,6 +92,7 @@ public class PostAPI {
     }
 
     public void loadPosts(){
+        databaseReference.keepSynced(true);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

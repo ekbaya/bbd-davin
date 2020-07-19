@@ -49,16 +49,15 @@
                 android:textColorHint="@color/colorDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailTv"
+                    android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:ems="10"
-                    android:inputType="phone"
+                    android:inputType="textEmailAddress"
                     android:textColor="@color/colorBlack"
                     android:textSize="18sp" />
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -74,13 +73,13 @@
                 app:passwordToggleTint="@color/colorDark">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passwordTv"
+                    android:id="@+id/passwordEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30dp"
                     android:layout_marginRight="30dp"
                     android:ems="10"
-                    android:inputType="numberPassword"
+                    android:inputType="textPassword"
                     android:textColor="@color/colorBlack"
                     android:textSize="18sp" />
 

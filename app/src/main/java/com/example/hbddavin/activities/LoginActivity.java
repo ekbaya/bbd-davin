@@ -22,7 +22,7 @@ import com.example.hbddavin.services.AccountListener;
 import com.example.hbddavin.utils.Loader;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AccountListener.LoginListener , AccountListener.AccountRecoveryListener {
-    private EditText emailTv, passwordTv;
+    private EditText emailEditText, passwordEditText;
     private TextView forgetPasswordTv;
     private Button loginBtn, createAccountBtn;
     private Loader loader;
@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        emailTv = findViewById(R.id.emailTv);
-        passwordTv = findViewById(R.id.passwordTv);
+        emailEditText = findViewById(R.id.emailEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
         forgetPasswordTv = findViewById(R.id.forgetPasswordTv);
         loginBtn = findViewById(R.id.loginBtn);
         createAccountBtn = findViewById(R.id.createAccountBtn);
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         if (view.equals(loginBtn)){
             if (validated()){
-               accountAPI.loginUser(emailTv.getText().toString(), passwordTv.getText().toString());
+               accountAPI.loginUser(emailEditText.getText().toString(), passwordEditText.getText().toString());
                loader.showDialogue();
             }
 
@@ -114,11 +114,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private boolean validated() {
-        if (TextUtils.isEmpty(emailTv.getText().toString())){
+        if (TextUtils.isEmpty(emailEditText.getText().toString())){
             Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show();
             return false;
         }
-        else if (TextUtils.isEmpty(passwordTv.getText().toString())){
+        else if (TextUtils.isEmpty(passwordEditText.getText().toString())){
             Toast.makeText(this, "Invalid password", Toast.LENGTH_SHORT).show();
             return false;
         }else return true;
